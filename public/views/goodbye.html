@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- import the jsPsych core library, specific plugins, jquery and some other scripts-->
+  <title>Goodbye</title> <!-- defines a title in the browser tab -->
+  <script src="../../js/jspsych.js"></script> <!-- jsPsych core library -->
+  <script src="../../js/plugins/jspsych-html-keyboard-response.js"></script>
+  <link href="../css/jspsych.css" rel="stylesheet" type="text/css">
+  </link> <!-- standard jsPsych css stylesheet -->
+  <style>
+    div {
+      font-size:28px;
+    },
+  </style>
+</head>
+<body></body>
+<script>
+  var timeline = [];
+
+  var goodbye_message = "实验结束，非常感谢您的配合！, <br><br> " +
+    "如有任何问题您可以与实验员chi.zhang@ugent.be联系 <br><br>" +
+    "请按任意键回到实验信息网页!"
+
+  var goodbye_event = {
+    type: 'html-keyboard-response',
+    stimulus: goodbye_message,
+    choices: jsPsych.NO_KEYS,
+  };
+  timeline.push(goodbye_event);
+
+  jsPsych.init({
+    timeline: timeline,
+  })
+</script>
+
+</html>
